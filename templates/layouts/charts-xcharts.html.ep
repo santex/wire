@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- start: Meta -->
+  <meta charset="utf-8">
+  <title><%= title %></title>
+  <meta name="description" content="<%= $self->config->{app}->{description} %>">
+  <meta name="author" content="<%= $self->config->{app}->{author} %>">
+  <meta name="keyword" content="<%= $self->config->{app}->{keywords} %>">
+  <!-- end: Meta -->
+  <!-- start: Mobile Specific -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- end: Mobile Specific -->
+  <!-- start: CSS -->
+    <!-- start: CSS -->
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bootstrap/css/style.min.css" rel="stylesheet">
+  <style>
+
+  body{overflow:hidden;overflow-y:scroll;}
+  </style>
+  <!-- end: CSS -->
+  <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="/bootstrap/js/respond.min.js"></script>
+    <link href="/bootstrap/css/ie.css" rel="stylesheet">
+  <![endif]-->
+  <!--[if IE 9]>
+    <link id="ie9style" href="/bootstrap/css/ie9.css" rel="stylesheet">
+  <![endif]-->
+  <!-- start: Favicon and Touch Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/bootstrap/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bootstrap/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bootstrap/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/bootstrap/ico/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="/bootstrap/ico/favicon.png">
+  <!-- end: Favicon and Touch Icons -->
+</head>
+<body>
+    <!-- start: Header -->
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".sidebar-nav.nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/index"><span>BTC-App, Inc</span></a>
+        <!-- end: Header Menu -->
+      </div>
+    </div>
+  </div>
+  <!-- start: Header -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="box">
+          <div class="box-header">
+              <h2><i class="fa fa-bar-chart-o"></i><span class="break"></span></h2>
+              <div class="box-icon">
+                <a href="/charts-xcharts#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+                <a href="/charts-xcharts#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                <a href="/charts-xcharts#" class="btn-close"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+            <div class="box-content">
+               <div id="realtimechart" style="height: 290px; padding: 0px; position: relative;"><canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1358px; height: 190px;" width="1358" height="190"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 173px; left: 14px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 130px; left: 7px; text-align: right;">125</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 87px; left: 7px; text-align: right;">350</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 44px; left: 7px; text-align: right;">475</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 1px; left: 0px; text-align: right;">600</div></div></div><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1358px; height: 190px;" width="1358" height="190"></canvas></div>
+               <p>Time between updates: <input id="updateInterval" type="text" value="" style="text-align: right; width:5em"> milliseconds</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box-header">
+              <h2><i class="fa fa-bar-chart-o"></i><span class="break"></span></h2>
+              <div class="box-icon">
+                <a href="/charts-xcharts#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+                <a href="/charts-xcharts#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                <a href="/charts-xcharts#" class="btn-close"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+            <div class="box-content">
+              <figure class="demo" id="chart" style="height: 400px"></figure>
+            </div>
+          </div>
+
+      
+          <div class="box">
+          <div class="box-header">
+              <h2><i class="fa fa-bar-chart-o"></i><span class="break"></span></h2>
+              <div class="box-icon">
+                <a href="/charts-xcharts#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+                <a href="/charts-xcharts#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                <a href="/charts-xcharts#" class="btn-close"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+            <div class="box-content">
+              <figure class="demo" id="example1" style="height: 300px"></figure>
+            </div>
+          </div>
+
+      
+          <div class="box">
+            <div class="box-header">
+              <h2><i class="fa fa-bar-chart-o"></i><span class="break"></span></h2>
+              <div class="box-icon">
+                <a href="/charts-xcharts#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+                <a href="/charts-xcharts#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                <a href="/charts-xcharts#" class="btn-close"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+            <div class="box-content">
+              <figure class="demo" id="example2" style="height: 300px"></figure>
+            </div>
+          </div>
+
+        
+          <div class="box">
+          <div class="box-header">
+              <h2><i class="fa fa-bar-chart-o"></i><span class="break"></span></h2>
+              <div class="box-icon">
+                <a href="/charts-xcharts#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+                <a href="/charts-xcharts#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                <a href="/charts-xcharts#" class="btn-close"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+            <div class="box-content">
+              <figure class="demo" id="example3" style="height: 300px"></figure>
+            </div>
+          </div>
+
+       
+          <div class="box">
+            <div class="box-header">
+              <h2><i class="fa fa-bar-chart-o"></i><span class="break"></span></h2>
+              <div class="box-icon">
+                <a href="/charts-xcharts#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+                <a href="/charts-xcharts#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                <a href="/charts-xcharts#" class="btn-close"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+            <div class="box-content">
+              <figure class="demo" id="example4" style="height: 300px"></figure>
+            </div>
+          </div>
+
+           <div class="box">
+            <div class="box-header">
+              <h2><i class="fa fa-bar-chart-o"></i><span class="break"></span></h2>
+              <div class="box-icon">
+                <a href="/charts-xcharts#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+                <a href="/charts-xcharts#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                <a href="/charts-xcharts#" class="btn-close"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+
+            <div class="box-content">
+              <figure class="demo" id="exampleVis" style="height: 300px"></figure>
+            </div>
+          </div>
+
+     
+          <div class="box">
+          <div class="box-header">
+              <h2><i class="fa fa-bar-chart-o"></i><span class="break"></span></h2>
+              <div class="box-icon">
+                <a href="/charts-xcharts#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+                <a href="/charts-xcharts#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                <a href="/charts-xcharts#" class="btn-close"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+
+            <div class="box-content">
+              <div class="browserStat big">
+                <img src="/bootstrap/img/browser-chrome-big.png" alt="Chrome">
+                <span>34%</span>
+              </div>
+              <div class="browserStat big">
+                <img src="/bootstrap/img/browser-firefox-big.png" alt="Firefox">
+                <span>34%</span>
+              </div>
+              <div class="browserStat">
+                <img src="/bootstrap/img/browser-ie.png" alt="Internet Explorer">
+                <span>34%</span>
+              </div>
+              <div class="browserStat">
+                <img src="/bootstrap/img/browser-safari.png" alt="Safari">
+                <span>34%</span>
+              </div>
+              <div class="browserStat">
+                <img src="/bootstrap/img/browser-opera.png" alt="Opera">
+                <span>34%</span>
+              </div>
+            </div>
+          </div>
+          
+
+       
+          <div class="box">
+            <div class="box-header">
+              <h2><i class="fa fa-bar-chart-o"></i><span class="break"></span></h2>
+              <div class="box-icon">
+                <a href="/charts-xcharts#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+                <a href="/charts-xcharts#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                <a href="/charts-xcharts#" class="btn-close"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+
+            <div class="box-content">
+              <div class="sparkLineStats">
+                  <ul class="unstyled">
+                  <li>
+                  <div class="sparkLineStats3"></div>
+                  Pageviews:
+                  <span class="number">781</span>
+                  </li>
+                  <li>
+                  <div class="sparkLineStats4"></div>
+                  Pages / Visit:
+                  <span class="number">2,19</span>
+                  </li>
+                  <li>
+                  <div class="sparkLineStats5"></div>
+                  Avg. Visit Duration:
+                  <span class="number">00:02:58</span>
+                  </li>
+                  <li>
+                  <div class="sparkLineStats6"></div>
+                  Bounce Rate: <span class="number">59,83%</span>
+                  </li>
+                  <li>
+                  <div class="sparkLineStats7"></div>
+                  %% New Visits:
+                  <span class="number">70,79%</span>
+                  </li>
+                  <li>
+                  <div class="sparkLineStats8"></div>
+                  %% Returning Visitor:
+                  <span class="number">29,21%</span>
+                  </li>
+                  </ul>
+                        </div><!-- End .sparkStats -->
+            
+          </div>
+        </div><!--/col-->
+
+
+      <div class="row hideInIE8">
+              <div class="clearfix"></div>
+            </div>
+       
+
+
+          <div class="box">
+            <div class="box-header">
+              <h2><i class="fa fa-bar-chart-o"></i><span class="break"></span></h2>
+              <div class="box-icon">
+                <a href="/charts-xcharts#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+                <a href="/charts-xcharts#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                <a href="/charts-xcharts#" class="btn-close"><i class="fa fa-times"></i></a>
+              </div>
+            </div>
+
+            <div class="box-content">
+              <div style="width:40%; display: inline-block">
+                <div id="g1" class="sz1"></div>
+                <div id="g1a" class="sz1"></div>
+              </div>
+              <div style="width:40%; float: right; display: inline-block">
+                <div id="g2" class="sz0"></div>
+                <div id="g2a" class="sz0"></div>
+                <div id="g2b" class="sz0"></div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+     
+      </div><!--/row-->
+.
+.
+      </div>
+      <!-- end: Content -->
+  </div><!--/container-->
+  <div class="clearfix"></div>
+<footer>
+    <p>
+      <span style="text-align:left;float:left">santex@c3d2.de <a href="/">War-room</a> by santex</span>
+      <span class="hidden-phone" style="text-align:right;float:right">Powered by: <a href="/" alt="War-room">active-memory  santex</a></span>
+    </p>
+  </footer>
+  <!-- start: JavaScript-->
+  <!--[if !IE]>-->
+      <script src="/bootstrap/js/jquery-2.0.3.min.js"></script>
+  <!--<![endif]-->
+  <!--[if IE]>
+    <script src="/bootstrap/js/jquery-1.10.2.min.js"></script>
+  <![endif]-->
+  <!--[if !IE]>-->
+    <script type="text/javascript">
+      window.jQuery || document.write("<script src='/bootstrap/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+      </script>
+  <!--<![endif]-->
+  <!--[if IE]>
+    <script type="text/javascript">
+    window.jQuery || document.write("<script src='/bootstrap/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+  <![endif]-->
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/bootstrap/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/bootstrap/js/jquery.sparkline.min.js"></script>
+  <script src="/bootstrap/js/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="/bootstrap/js/raphael.min.js"></script>
+  <script src="/bootstrap/js/retina.min.js"></script>
+  <script src="/bootstrap/js/xcharts.min.js"></script>
+  <script src="/bootstrap/js/core.min.js"></script>
+  <script src="/bootstrap/js/custom.min.js"></script>
+  <script src="/bootstrap/js/d3.min.js"></script>
+  <script src="/bootstrap/js/jquery.flot.min.js"></script>
+  <script src="/bootstrap/js/jquery.flot.pie.min.js"></script>
+  <script src="/bootstrap/js/jquery.flot.resize.min.js"></script>
+  <script src="/bootstrap/js/jquery.flot.stack.min.js"></script>
+  <script src="/bootstrap/js/jquery.flot.time.min.js"></script>
+  <script src="/bootstrap/js/justgage.1.0.1.min.js"></script>
+  <script src="/bootstrap/js/pages/charts-flot.js"></script>
+  <script src="/bootstrap/js/pages/charts-xcharts.js"></script>
+  <script src="/bootstrap/js/pages/charts-other.js"></script>
+  <script src="/bootstrap/js/pages/index.js"></script>
+</body>
+</html>
