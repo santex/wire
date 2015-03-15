@@ -17,8 +17,8 @@ my $config = plugin 'Config';
 
 
 
-any '/' => 'charts-xcharts';
-any 'index' => 'charts-xcharts';
+any '/' => 'index';
+any 'index' => 'index';
 any 'calendar' => 'calendar';
 any 'charts-flot' => 'charts-flot';
 any 'charts-others' => 'charts-others';
